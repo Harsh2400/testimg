@@ -13,32 +13,30 @@
 	<div>
 		<form action="/" method="POST" enctype="multipart/form-data">
 			<div>
-<<<<<<< HEAD
-				<label for="name">Image Title</label>
-				<input type="text" id="name" placeholder="Name" value="" name="name" required>
-			</div>
-			<div>
-				<label for="desc">Image Description</label>
-				<textarea id="desc" name="pesc" value="" rows="2" placeholder="Description" required>
-				</textarea>
-=======
 				<label for="name">Name</label>
 				<br>
 				<input type="text" id="name" placeholder="Name" value="" name="name" required>
->>>>>>> temp
+			</div>
+			<br>
+			<div>
+				<label for="town">Town</label>
+				<br>
+				<input type="text" id="town" placeholder="Town" value="" name="town" required>
 			</div>
 			<br>
 			<div>
 				<label for="image">Upload Image</label>
-<<<<<<< HEAD
-=======
 				<br>
->>>>>>> temp
 				<input type="file" id="image" name="image" value="" required>
 			</div>
 			<br>
+			<div >
+				<label for="desc">Add description</label><br>
+				<textarea id="desc" rows="5" cols="60" name="desc"  placeholder="Add Description" required ></textarea>
+			</div>
+			<br>
 			<div>
-				<button type="submit">Submit</button>
+				<button type="submit" >Submit</button>
 			</div>
 		</form>
 	</div>
@@ -51,25 +49,20 @@
 			<div>
 				<div>
 					<img src="data:image/<%=image.img.contentType%>;base64,
-					<%=image.img.data.toString('base64')%>">
+					<%=image.img.data.toString('base64')%>" height="200" >
 					<div>
-<<<<<<< HEAD
+						<br>
 						<h5>
 							<%= image.name %>
 						</h5>
-
-
-						<p>
-							<%= image.desc %>
-						</p>
-
-
-=======
+						<br>
 						<h2>
-							<%= image.name %>
+							<%= image.town %>
 						</h2>
 						<br>
->>>>>>> temp
+						<h2>
+							<%= image.desc%>
+						</h2>
 					</div>
 				</div>
 			</div>
