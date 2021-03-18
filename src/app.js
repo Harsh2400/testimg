@@ -66,13 +66,18 @@ app.get('/', (req, res) => {
     });
 });
 
+// testing purpose
+app.get('/index', (req, res) => {
+        
+        res.render('index');
+});
+
 // Step 8 - the POST handler for processing the uploaded file
  
 app.post('/', upload.single('image'), (req, res, next) => {
  
     var obj = {
         name: req.body.name,
-        desc: req.body.desc,
         img: {
             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
             contentType: 'image/png'

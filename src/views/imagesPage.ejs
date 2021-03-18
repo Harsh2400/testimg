@@ -13,6 +13,7 @@
 	<div>
 		<form action="/" method="POST" enctype="multipart/form-data">
 			<div>
+<<<<<<< HEAD
 				<label for="name">Image Title</label>
 				<input type="text" id="name" placeholder="Name" value="" name="name" required>
 			</div>
@@ -20,11 +21,22 @@
 				<label for="desc">Image Description</label>
 				<textarea id="desc" name="pesc" value="" rows="2" placeholder="Description" required>
 				</textarea>
+=======
+				<label for="name">Name</label>
+				<br>
+				<input type="text" id="name" placeholder="Name" value="" name="name" required>
+>>>>>>> temp
 			</div>
+			<br>
 			<div>
 				<label for="image">Upload Image</label>
+<<<<<<< HEAD
+=======
+				<br>
+>>>>>>> temp
 				<input type="file" id="image" name="image" value="" required>
 			</div>
+			<br>
 			<div>
 				<button type="submit">Submit</button>
 			</div>
@@ -41,6 +53,7 @@
 					<img src="data:image/<%=image.img.contentType%>;base64,
 					<%=image.img.data.toString('base64')%>">
 					<div>
+<<<<<<< HEAD
 						<h5>
 							<%= image.name %>
 						</h5>
@@ -51,6 +64,12 @@
 						</p>
 
 
+=======
+						<h2>
+							<%= image.name %>
+						</h2>
+						<br>
+>>>>>>> temp
 					</div>
 				</div>
 			</div>
