@@ -19,13 +19,24 @@
 			</div>
 			<br>
 			<div>
+				<label for="town">Town</label>
+				<br>
+				<input type="text" id="town" placeholder="Town" value="" name="town" required>
+			</div>
+			<br>
+			<div>
 				<label for="image">Upload Image</label>
 				<br>
 				<input type="file" id="image" name="image" value="" required>
 			</div>
 			<br>
+			<div >
+				<label for="desc">Add description</label><br>
+				<textarea id="desc" rows="5" cols="60" name="desc"  placeholder="Add Description" required ></textarea>
+			</div>
+			<br>
 			<div>
-				<button type="submit">Submit</button>
+				<button type="submit" >Submit</button>
 			</div>
 		</form>
 	</div>
@@ -37,13 +48,22 @@
 		<% items.forEach(function(image) { %>
 			<div>
 				<div>
-					<img src="data:image/<%=image.img.contentType%>;base64,
-					<%=image.img.data.toString('base64')%>">
+					<center>
+						<img src="data:image/<%=image.img.contentType%>;base64,
+					<%=image.img.data.toString('base64')%>" height="200" >
+					</center>
 					<div>
 						<h2>
 							<%= image.name %>
 						</h2>
 						<br>
+						<h2>
+							<%= image.town %>
+						</h2>
+						<br>
+						<h2>
+							<%= image.desc%>
+						</h2>
 					</div>
 				</div>
 			</div>
