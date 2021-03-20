@@ -4,11 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title>Image Uploading</title>
 </head>
 
 <body>
-	<h1>To Upload Image on mongoDB</h1>
+	<h1>Post Your Ad</h1>
 	<hr>
 	<div>
 		<form action="/" method="POST" enctype="multipart/form-data">
@@ -30,43 +31,53 @@
 				<input type="file" id="image" name="image" value="" required>
 			</div>
 			<br>
-			<div >
+			<div>
 				<label for="desc">Add description</label><br>
-				<textarea id="desc" rows="5" cols="60" name="desc"  placeholder="Add Description" required ></textarea>
+				<textarea id="desc" rows="5" cols="40" name="desc" placeholder="Add Description" required></textarea>
 			</div>
 			<br>
 			<div>
-				<button type="submit" >Submit</button>
+				<button type="submit">Submit</button>
 			</div>
 		</form>
 	</div>
 
 	<hr>
+	<br>
+	<a href="/">homepage</a>
+	<br>
 
-	<h1>Uploaded Images</h1>
+	<h1>Advertisements</h1>
 	<div>
 		<% items.forEach(function(image) { %>
-			<div>
+			<div class="container" style="background-color:#dddd;height: auto;width: auto;">
+				<style>
+					img {
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+						margin-top: auto;
+						margin-bottom: auto;
+						
+					}
+					h5{
+						text-align: center;
+					}
+				</style>
 				<div>
 					<img src="data:image/<%=image.img.contentType%>;base64,
-					<%=image.img.data.toString('base64')%>" height="200" >
+						<%=image.img.data.toString('base64')%>" height="275" width="350">
 					<div>
-						<br>
 						<h5>
-							<%= image.name %>
+							<%= image.name %>||
+								<%= image.town %>||
+									<%= image.desc%>
 						</h5>
-						<br>
-						<h2>
-							<%= image.town %>
-						</h2>
-						<br>
-						<h2>
-							<%= image.desc%>
-						</h2>
 					</div>
 				</div>
 			</div>
 			<% }) %>
+	</div>
 	</div>
 </body>
 
