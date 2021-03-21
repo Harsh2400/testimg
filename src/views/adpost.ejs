@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Advertisements</h1>
+	<div>
+		<% items.forEach(function(image) { %>
+			<div class="container" style="background-color:#dddd;height: auto;width: auto;">
+				<style>
+					img {
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+						margin-top: auto;
+						margin-bottom: auto;
+						
+					}
+					h5{
+						text-align: center;
+					}
+				</style>
+				<div>
+					<img src="data:image/<%=image.img.contentType%>;base64,
+						<%=image.img.data.toString('base64')%>" height="275" width="350">
+					<div>
+						<h5>
+							<%= image.name %>||
+								<%= image.town %>||
+									<%= image.desc%>
+						</h5>
+					</div>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+
+</body>
+</html>

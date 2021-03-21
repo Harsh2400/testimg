@@ -52,10 +52,28 @@ var upload = multer({ storage: storage });
 var imgModel = require('./model');
 
 
-// Step 7 - the GET request handler that provides the HTML UI
- 
+
+// testing purpose (Homepage addition) 
 app.get('/', (req, res) => {
+    res.render('index');
+});
+//adsection testing
+app.get('/adpost', (req, res) => {
     imgModel.find({}, (err, items) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('An error occurred', err);
+        }
+        else {
+            res.render('adpost', { items: items });
+        }
+    });
+});
+
+
+// Step 7 - the GET request handler that provides the HTML UI
+app.get('/ad', (req, res) => {
+        imgModel.find({}, (err, items) => {
         if (err) {
             console.log(err);
             res.status(500).send('An error occurred', err);
@@ -64,12 +82,7 @@ app.get('/', (req, res) => {
             res.render('imagesPage', { items: items });
         }
     });
-});
-
-// testing purpose
-app.get('/index', (req, res) => {
         
-        res.render('index');
 });
 
 // Step 8 - the POST handler for processing the uploaded file
