@@ -10,6 +10,7 @@ var mongoose = require('mongoose')
 
 var fs = require('fs');
 var path = require('path');
+var bcrypt = require("bcryptjs")
 
 var check = false;
 
@@ -166,7 +167,7 @@ app.get('/index', (req, res) => {
     }
 });
 //logout
-app.get('/loginpage', (req, res) => {
+app.get('/logout', (req, res) => {
     check = false;
     res.render('loginpage');
 });
