@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const brypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const regSchema = new mongoose.Schema({
     userid : {
@@ -27,9 +27,9 @@ const regSchema = new mongoose.Schema({
 })
 
 //hashing
-regSchema.pre("save",async function(next){
+regSchema.pre("save", async function(next){
     if(this.isModified("password")){
-        this.password = await brypt.hash(this.password, 10);
+        this.password = await bcrypt.hash(this.password, 10);
         this.confirmpassword = undefined;
         console.log(this.password)
     }
